@@ -7,7 +7,7 @@ import numpy as np
 
 # 数据加载
 #data = pd.read_csv('Mall_Customers.csv', encoding='gbk')
-data = pd.read_csv('KW27_car_data.csv',encoding ='gbk')
+data = pd.read_csv('L3_car_data.csv',encoding ='gbk')
 train_x = data[["人均GDP","城镇人口比重","交通工具消费价格指数","百户拥有汽车量"]]
 
 # 规范化到 [0,1] 空间
@@ -24,7 +24,7 @@ result = pd.concat((data,pd.DataFrame(predict_y)),axis=1)
 result.rename({0:u'聚类结果'},axis=1,inplace=True)
 print(result)
 # 将结果导出到CSV文件中
-result.to_csv("KW27_car_data_result.csv",index=False)
+result.to_csv("L3_car_data_result.csv",index=False)
 
 
 # K-Means 手肘法：统计不同K取值的误差平方和
